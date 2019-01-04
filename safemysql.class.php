@@ -67,9 +67,6 @@
  * 
  */
 
-
-use mysqli;
-
 class SafeMySQL
 {
     const RESULT_ASSOC = MYSQLI_ASSOC;
