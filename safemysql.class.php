@@ -155,9 +155,25 @@ class SafeMySQL
     /**
      * @param $mode
      */
-    public function autocommit($mode){
+    public function autocommit($mode)
+    {
         mysqli_autocommit($this->conn, $mode);
     }
+    
+    
+    public function beginTransaction(): void
+    {
+        $this->autocommit(false);
+    }
+    
+    
+    
+    public function endTransaction(): void
+    {
+        $this->commit();
+        $this->autocommit(true);
+    }
+
 
 
 
